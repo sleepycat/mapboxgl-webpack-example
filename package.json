@@ -1,0 +1,21 @@
+{
+  "name": "mapboxgl-webpack",
+  "version": "1.0.0",
+  "description": "an example of using mapboxgl and webpack together",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mike Williamson",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.5.2",
+    "babel-loader": "^6.2.3",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "json-loader": "^0.5.4",
+    "mapbox-gl": "^0.14.2",
+    "transform-loader": "^0.2.3",
+    "webworkify-webpack": "^1.0.4"
+  }
+}
