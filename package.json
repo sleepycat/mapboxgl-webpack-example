@@ -16,6 +16,7 @@
     "json-loader": "^0.5.4",
     "mapbox-gl": "^0.14.2",
     "transform-loader": "^0.2.3",
+    "webpack": "^1.12.14",
     "webworkify-webpack": "^1.0.4"
   }
 }
