@@ -4,14 +4,11 @@ var path = require('path')
 module.exports = {
   entry: './app.js',
   output: { path: __dirname, filename: 'bundle.js' },
-  node: {
-    console: true,
-    fs: "empty"
-  },
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.js'],
     alias: {
-      webworkify: 'webworkify-webpack'
+      webworkify: 'webworkify-webpack',
+      'mapbox-gl': path.resolve('./node_modules/mapbox-gl/dist/mapbox-gl.js')
     }
   },
   module: {
@@ -30,18 +27,12 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        include: path.resolve(__dirname, 'node_modules/mapbox-gl/js/render/painter/use_program.js'),
-        loader: 'transform/cacheable?brfs'
-      },
-      {
-        test: /\.js$/,
-        include: path.resolve(__dirname, 'node_modules/mapbox-gl/js/render/shaders.js'),
-        loader: 'transform/cacheable?brfs'
-      },
-      {
-        test: /\.js$/,
         include: path.resolve(__dirname, 'node_modules/webworkify/index.js'),
         loader: 'worker'
+      },
+      {
+        test: /mapbox-gl.+\.js$/,
+        loader: 'transform/cacheable?brfs'
       }
     ]
   },
